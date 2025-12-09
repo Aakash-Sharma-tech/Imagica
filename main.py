@@ -2,9 +2,13 @@ from flask import Flask, render_template, jsonify, request
 import cloudinary
 import cloudinary.uploader
 from cloudinary.utils import cloudinary_url
-from config import api_key, cloud_name, api_secret
+#from config import api_key, cloud_name, api_secret
+import os
 from cloudinary import CloudinaryImage
 
+api_key=os.getenv("api_key")
+cloud_name=os.getenv("cloud_name")
+api_secret=os.getenv("api_secret")
 # Load configuration from config.json
 
 app = Flask(__name__)
